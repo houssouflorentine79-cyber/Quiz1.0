@@ -1,0 +1,15 @@
+{
+  "name": "Genius Quiz Premium",
+  "short_name": "GeniusQuiz",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#c9ad60",
+  "icons": [
+    {
+      "src": "https://via.placeholder.com/192/c9ad60/000000?text=G",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
