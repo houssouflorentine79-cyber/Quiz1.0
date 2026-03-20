@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genius Quiz Premium</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#c9ad60">
+</head>
+<body>
+
+<div class="app-wrapper">
+  
+  <section id="screen-lock" class="screen active">
+    <div class="glass-container">
+      <div class="brand-box">
+        <div class="logo-icon">🔑</div>
+        <h1 class="brand-name">ACCÈS<span>PRO</span></h1>
+        <p class="tagline">ENTREZ VOTRE CLÉ D'ACTIVATION</p>
+      </div>
+      <div class="lock-form">
+        <input type="text" id="activation-key" placeholder="Code secret..." maxlength="4">
+        <button onclick="checkKey()" class="btn-main">ACTIVER L'APPLICATION</button>
+      </div>
+      <p class="footer-note">Contactez le vendeur pour obtenir votre clé.</p>
+    </div>
+  </section>
+
+  <section id="screen-home" class="screen">
+    <div class="glass-container">
+      <div class="brand-box">
+        <div class="logo-icon">G</div>
+        <h1 class="brand-name">GENIUS<span>QUIZ</span></h1>
+        <p class="tagline">L'ÉLITE DE LA CULTURE GÉNÉRALE</p>
+      </div>
+      <div class="home-menu">
+        <button onclick="navTo('screen-game')" class="btn-main pulse">COMMENCER LE DÉFI</button>
+        <button onclick="toggleSettings(true)" class="btn-sub">PARAMÈTRES</button>
+      </div>
+      <p class="version">PREMIUM EDITION V1.0</p>
+    </div>
+  </section>
+
+  <section id="screen-game" class="screen">
+    <div class="glass-container game-layout">
+      <header class="game-header">
+        <button onclick="navTo('screen-home')" class="back-btn">←</button>
+        <div class="level-indicator">NIVEAU <span id="lvl-val">1</span></div>
+        <button onclick="toggleSettings(true)" class="icon-settings">⚙️</button>
+      </header>
+      <div class="progress-bar-container"><div id="progress-fill" class="progress-fill"></div></div>
+      <div class="question-box">
+        <span class="category-tag">CULTURE GÉNÉRALE</span>
+        <h2 id="q-text">Chargement...</h2>
+      </div>
+      <div id="options-grid" class="options-grid"></div>
+      <footer class="game-footer">
+        <div class="score-box">
+          <span class="label">VOTRE SCORE</span>
+          <span id="score-val" class="value">00</span>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+  <div id="settings-overlay" class="overlay">
+    <div class="settings-card">
+      <h2>CONFIGURATION</h2>
+      <div class="control-group">
+        <label>VOLUME DES SONS</label>
+        <input type="range" id="vol-fx" min="0" max="100" value="50">
+      </div>
+      <button onclick="toggleSettings(false)" class="btn-main">VALIDER</button>
+    </div>
+  </div>
+
+</div>
+
+<audio id="sound-click" src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3"></audio>
+<audio id="sound-success" src="https://assets.mixkit.co/active_storage/sfx/1435/1435-preview.mp3"></audio>
+<audio id="sound-error" src="https://assets.mixkit.co/active_storage/sfx/2573/2573-preview.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>
