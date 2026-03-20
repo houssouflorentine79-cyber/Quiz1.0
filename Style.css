@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap');
+
+:root {
+  --gold: #c9ad60; --bg: #050505;
+  --glass: rgba(255, 255, 255, 0.03); --border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  background: var(--bg); font-family: 'Montserrat', sans-serif;
+  color: white; margin: 0; height: 100vh;
+  display: flex; justify-content: center; align-items: center; overflow: hidden;
+}
+
+.app-wrapper { width: 100%; max-width: 400px; height: 100vh; position: relative; }
+
+.screen {
+  position: absolute; width: 100%; height: 100%;
+  display: none; padding: 20px; box-sizing: border-box;
+}
+
+.screen.active { display: flex; flex-direction: column; }
+
+.glass-container {
+  background: var(--glass); backdrop-filter: blur(20px);
+  border: 1px solid var(--border); border-radius: 40px;
+  height: 100%; padding: 40px; display: flex;
+  flex-direction: column; justify-content: space-between;
+}
+
+.brand-name { font-weight: 200; letter-spacing: 6px; text-align: center; }
+.brand-name span { color: var(--gold); font-weight: 700; }
+.tagline { font-size: 0.7rem; text-align: center; opacity: 0.5; }
+
+.btn-main {
+  background: var(--gold); color: black; border: none; padding: 20px;
+  border-radius: 15px; font-weight: 700; cursor: pointer;
+}
+
+.btn-sub {
+  background: transparent; color: white; border: 1px solid var(--border);
+  padding: 15px; border-radius: 15px; margin-top: 10px; cursor: pointer;
+}
+
+#activation-key {
+  background: rgba(255,255,255,0.05); border: 1px solid var(--gold);
+  padding: 15px; border-radius: 10px; color: white; text-align: center; width: 100%;
+}
+
+.progress-bar-container { background: rgba(255,255,255,0.1); height: 4px; margin: 15px 0; }
+.progress-fill { background: var(--gold); height: 100%; width: 0%; transition: 0.4s; }
+
+.options-grid { display: flex; flex-direction: column; gap: 12px; }
+
+.overlay {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9); display: none; justify-content: center; align-items: center; z-index: 100;
+}
+.settings-card { background: #111; padding: 30px; border-radius: 20px; width: 80%; }
